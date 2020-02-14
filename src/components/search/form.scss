@@ -1,0 +1,58 @@
+@import "../../assets/styles/mixins";
+
+header {
+  padding: 25px 20px;
+
+  form {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+
+      input {
+        color: #3e3e3e;
+        @include fluidFontSize(16px, 20px);
+        line-height: 30px;
+        text-shadow: 1px 1px 1px #6b6b6b;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid #4c5c2d;
+        cursor: pointer;
+        outline: none;
+        &:focus {
+          border-bottom: 2px solid #29371d;
+        }
+        &::-webkit-input-placeholder { /* Edge */
+          color: #3e3e3e;
+          @include fluidFontSize(14px, 18px);
+        }
+
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: #3e3e3e;
+          @include fluidFontSize(14px, 18px);
+        }
+
+        &::placeholder {
+          color: #3e3e3e;
+          @include fluidFontSize(14px, 18px);
+        }
+      }
+
+      button {
+        margin-left: 20px;
+        padding: 10px 25px;
+        color: #ffffff;
+        background-color:#4a6532;
+        box-shadow: 2px 2px 3px #4e747d;
+        border-radius: 5px;
+        cursor: pointer;
+        -webkit-transition: .3s;
+        -moz-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+        &:hover {
+          background-color: #384c27;
+        }
+      }
+    }
+
+}

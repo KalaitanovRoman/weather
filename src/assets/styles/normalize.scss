@@ -1,0 +1,64 @@
+@import "mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  color: #344e54;
+}
+
+body, html {
+  width: 100%;
+  min-height: 100%;
+  color: #000;
+  overflow: hidden;
+  overflow-y: auto;
+  margin: 0;
+  background-color: #7b885b;
+  background-image: url("../images/mobile-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 600px) {
+
+  body, html {
+    background-image: url("../images/desktop-background.jpg");
+  }
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+h1, h2 {
+  margin-bottom: 25px;
+  color: #3e3e3e;
+  @include fluidFontSize(22px, 30px);
+  text-align: center;
+  text-shadow: 1px 1px 1px #6b6b6b;
+}
