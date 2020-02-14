@@ -1,0 +1,15 @@
+@-webkit-keyframes gradient {
+  0%{background-position:0% 35%}
+  50%{background-position:35% 70%}
+  100%{background-position:70% 100%}
+}
+@-moz-keyframes gradient {
+  0%{background-position:0% 69%}
+  50%{background-position:100% 32%}
+  100%{background-position:0% 69%}
+}
+@keyframes gradient {
+  0%{background-position:0% 69%}
+  50%{background-position:100% 32%}
+  100%{background-position:0% 69%}
+}

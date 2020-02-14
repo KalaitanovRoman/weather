@@ -1,0 +1,117 @@
+@import "mixins";
+
+.weather {
+  &-wrapper {
+    padding: 20px 10px;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px #4e4d4d;
+    background: linear-gradient(#63a5ca, #ececec, #b1d474);
+    background-size: 600% 600%;
+    -webkit-animation: gradient 0s ease infinite;
+    -moz-animation: gradient 0s ease infinite;
+    animation: gradient 15s ease infinite;
+
+    &-header {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    &-temperature {
+      @include fluidFontSize(34px, 40px);
+      text-transform: uppercase;
+      color: #4e747d;
+      text-shadow: 1px 1px 4px #a0c1d4;
+    }
+
+    &-date {
+      @include fluidFontSize(12px, 14px);
+      font-weight: bold;
+    }
+
+    &-icon {
+      margin-top: 5px;
+      color: #4e747d;
+    }
+
+    &-body {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      & > p {
+        @include fluidFontSize(12px, 14px);
+        text-transform: uppercase;
+      }
+      & > span {
+        @include fluidFontSize(14px, 16px);
+        font-weight: 700;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 600px) {
+  .weather {
+    &-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &-block {
+      width: 44%;
+    }
+  }
+}
+
+@media (min-width: 950px) {
+  .weather {
+    &-list {
+      justify-content: flex-start;
+    }
+    &-block {
+      width: 29.4%;
+      margin-left: 1%;
+      &:nth-child(3n - 2) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1480px) {
+  .weather {
+    &-list {
+      justify-content: space-between;
+    }
+    &-block {
+      width: 17.6%;
+      margin-left: 0;
+    }
+  }
+}
