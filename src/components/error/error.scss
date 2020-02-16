@@ -1,0 +1,39 @@
+.error {
+
+  &-page {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  &-dinosaur {
+    display: block;
+    width: 250px;
+    height: 250px;
+    background-image: url("../../assets/images/dinosaur.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
+  &-button {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #3f94ab;
+    padding: 20px 40px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #7dd491;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+    &:hover {
+      background-color: #256779;
+    }
+  }
+
+}

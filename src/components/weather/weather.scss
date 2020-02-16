@@ -1,6 +1,7 @@
-@import "mixins";
+@import "../../assets/styles/mixins";
 
 .weather {
+
   &-wrapper {
     padding: 20px 10px;
   }
@@ -19,13 +20,9 @@
     width: 90%;
     margin-bottom: 15px;
     padding: 15px;
-    border-radius: 2%;
+    background-color: #f0faf9;
+    border-radius: 5px;
     box-shadow: 2px 2px 5px #4e4d4d;
-    background: linear-gradient(#63a5ca, #ececec, #b1d474);
-    background-size: 600% 600%;
-    -webkit-animation: gradient 0s ease infinite;
-    -moz-animation: gradient 0s ease infinite;
-    animation: gradient 15s ease infinite;
 
     &-header {
       display: flex;
@@ -72,8 +69,8 @@
         font-weight: 700;
       }
     }
-
   }
+
 }
 
 @media (min-width: 600px) {
