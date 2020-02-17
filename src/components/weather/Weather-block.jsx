@@ -29,7 +29,7 @@ export class WeatherBlock extends Component {
                     </div>
                     <div className="weather-block-content">
                         <p>Wind speed:</p>
-                        <span>{Math.floor(wind)} km/h</span>
+                        <span>{Math.floor(wind)} m/s</span>
                     </div>
                 </div>
             </div>

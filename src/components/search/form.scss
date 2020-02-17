@@ -1,5 +1,14 @@
 @import "../../assets/styles/mixins";
 
+
+h1, h2 {
+  margin-bottom: 25px;
+  color: #3e3e3e;
+  @include fluidFontSize(22px, 30px);
+  text-align: center;
+  text-shadow: 1px 1px 1px #6b6b6b;
+}
+
 header {
   padding: 25px 20px;
 

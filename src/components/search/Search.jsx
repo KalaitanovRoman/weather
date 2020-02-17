@@ -80,7 +80,7 @@ class Search extends Component {
                         </form>
                     </header>
                 </section>
-                {error ? <Error city={this.state.value} /> : <WeatherList list={items} />}
+                {error ? <Error /> : <WeatherList list={items} />}
 
             </>
         );
