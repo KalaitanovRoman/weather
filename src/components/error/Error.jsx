@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './error.scss'
+import {connect} from "react-redux";
+import {addTitle} from "../../actions/actionCreator";
+import {withRouter} from "react-router-dom";
 
-export class Error extends Component {
+class ErrorPage extends Component {
     render() {
         return (
             <div className="error-page">
@@ -11,3 +14,7 @@ export class Error extends Component {
         );
     }
 }
+
+export default connect(({ weather }) => ({
+    weather
+}),null)(ErrorPage);

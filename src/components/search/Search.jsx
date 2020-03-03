@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { WeatherList } from "../weather/Weather-list";
-import { Error } from "../error/Error";
+import WeatherList from '../weather/Weather-list';
+import ErrorPage from '../error/Error';
+import { addTitle } from '../../actions/actionCreator';
+import Input from '../common/input';
 import './form.scss'
 
 class Search extends Component {
@@ -47,21 +50,24 @@ class Search extends Component {
     };
 
     handleSubmit = (event) => {
+        const { addTitle } = this.props;
+        const { value } = this.state;
         event.preventDefault();
 
-        if (this.state.value === '') {
+        if (value === '') {
             return;
         }
 
         this.fetchData();
-
-        this.props.history.push(`/${(this.state.value).toLocaleLowerCase()}`);
+        addTitle(value);
+        this.props.history.push(`/${(value).toLocaleLowerCase()}`);
     };
 
     render() {
         const {
             error,
             items,
+            value
         } = this.state;
 
         return (
@@ -69,22 +75,13 @@ class Search extends Component {
                 <section>
                     <header>
                         <h1>Check the weather in your city</h1>
-                        <form onSubmit={this.handleSubmit}>
-                            <input
-                                type="text"
-                                value={this.state.value}
-                                onChange={this.handleChange}
-                                placeholder="Choose a city"
-                            />
-                            <button type="submit">Send</button>
-                        </form>
+                        <Input onSubmit={this.handleSubmit} onChange={this.handleChange} value={value} />
                     </header>
                 </section>
-                {error ? <Error /> : <WeatherList list={items} />}
-
+                {error ? <ErrorPage /> : <WeatherList list={items} />}
             </>
         );
     }
 }
 
-export default withRouter(Search);
+export default connect(null, { addTitle })(withRouter(Search));

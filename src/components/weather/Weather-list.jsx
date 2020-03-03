@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { WeatherBlock } from "./Weather-block";
 import './weather.scss'
+import {connect} from "react-redux";
 
-export class WeatherList extends Component {
+class WeatherList extends Component {
     render() {
         const {
             list,
@@ -10,6 +11,7 @@ export class WeatherList extends Component {
 
         return (
             <section className="weather-wrapper">
+                <h2>City {this.props.weather.title}</h2>
                 <div className="weather-list">
                     {list.map(item => (
                         <WeatherBlock
@@ -26,3 +28,8 @@ export class WeatherList extends Component {
         );
     }
 }
+
+
+export default connect(({ weather }) => ({
+    weather
+}),null)(WeatherList);
